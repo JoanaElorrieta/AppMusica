@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AppMusica</string>
+    <string name="cancion">VISION</string>
+    <string name="artista">Dreamcatcher</string>
+    <string name="flecha_abajo">Flecha hacia abajo</string>
+    <string name="texto_cabecera">REPRODUCIENDO DESDE TU BIBLIOTECA</string>
+    <string name="atras">Flecha atras</string>
+    <string name="disco">Imagen del disco</string>
 </resources>
