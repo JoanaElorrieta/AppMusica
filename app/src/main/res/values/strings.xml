@@ -2,7 +2,7 @@
     <string name="app_name">AppMusica</string>
     <string name="cancion">VISION</string>
     <string name="artista">Dreamcatcher</string>
-    <string name="flecha_abajo">Flecha hacia abajo</string>
+    <string name="flecha_abajo">Desplegable para ver otras canciones</string>
     <string name="texto_cabecera">REPRODUCIENDO DESDE TU BIBLIOTECA</string>
     <string name="atras">Flecha atras</string>
     <string name="disco">Imagen del disco</string>
@@ -11,5 +11,8 @@
     <string name="siguiente">Boton siguiente</string>
     <string name="play">Boton play</string>
     <string name="estrella">Estrella</string>
+    <string name="share">Compartir</string>
+    <string name="lyrics">Muestra la letra</string>
+    <string name="pause">Boton de pausa</string>
 
 </resources>
