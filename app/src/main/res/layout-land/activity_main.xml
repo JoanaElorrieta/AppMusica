@@ -8,57 +8,64 @@
     tools:context=".MainActivity">
 
     <ImageButton
-        android:id="@+id/lyrics2"
+        android:id="@+id/lyrics"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/lyrics"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/share"
+        app:layout_constraintBottom_toTopOf="@+id/cancion"
+        app:layout_constraintEnd_toStartOf="@+id/disco"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/atras"
+        app:layout_constraintStart_toEndOf="@+id/lista_canciones"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.304"
         app:srcCompat="@android:drawable/ic_menu_sort_by_size"
         app:tint="#B71C1C" />
 
     <ImageButton
-        android:id="@+id/share2"
+        android:id="@+id/share"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="#00FFFFFF"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/share"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/volume"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/lyrics"
-        app:layout_constraintTop_toBottomOf="@+id/siguiente"
+        app:layout_constraintStart_toEndOf="@+id/star"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_share"
         app:tint="#B71C1C"
         tools:ignore="TouchTargetSizeCheck" />
 
     <ImageButton
-        android:id="@+id/pause2"
+        android:id="@+id/pause"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/pause"
         android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/siguiente"
+        app:layout_constraintStart_toEndOf="@+id/atras"
+        app:layout_constraintTop_toBottomOf="@+id/progress"
         app:srcCompat="@android:drawable/ic_media_pause"
-        app:tint="#B71C1C"
-        tools:layout_editor_absoluteX="335dp"
-        tools:layout_editor_absoluteY="356dp" />
+        app:tint="#B71C1C" />
 
     <SeekBar
         android:id="@+id/volume"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:max="100"
+        android:progress="70"
         android:rotation="90"
         android:rotationX="0"
         android:thumb="@android:drawable/ic_lock_silent_mode_off"
         android:thumbTint="#B71C1C"
-        tools:layout_editor_absoluteX="565dp"
-        tools:layout_editor_absoluteY="76dp" />
+        app:layout_constraintBottom_toTopOf="@+id/progress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/disco"
+        app:layout_constraintTop_toBottomOf="@+id/share" />
 
     <ImageButton
         android:id="@+id/lista_canciones"
@@ -66,20 +73,27 @@
         android:layout_height="48dp"
         android:backgroundTint="#00F3F3F3"
         android:contentDescription="@string/flecha_abajo"
-        android:tint="#B71C1C"
+        app:layout_constraintBottom_toTopOf="@+id/cancion"
+        app:layout_constraintEnd_toStartOf="@+id/lyrics"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.296"
         app:srcCompat="@android:drawable/arrow_down_float"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="28dp" />
+        app:tint="#B71C1C" />
 
     <ImageButton
         android:id="@+id/disco"
-        android:layout_width="258dp"
-        android:layout_height="267dp"
+        android:layout_width="225dp"
+        android:layout_height="225dp"
         android:accessibilityHeading="false"
         android:contentDescription="@string/disco"
-        app:srcCompat="@drawable/dreamcatcher___apocalypse___follow_us"
-        tools:layout_editor_absoluteX="236dp"
-        tools:layout_editor_absoluteY="28dp" />
+        app:layout_constraintBottom_toTopOf="@+id/progress"
+        app:layout_constraintEnd_toStartOf="@+id/star"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/lyrics"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/dreamcatcher___apocalypse___follow_us" />
 
     <TextView
         android:id="@+id/cancion"
@@ -88,8 +102,12 @@
         android:text="@string/cancion"
         android:textSize="16sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="67dp"
-        tools:layout_editor_absoluteY="132dp" />
+        app:layout_constraintBottom_toTopOf="@+id/tiempo_actual"
+        app:layout_constraintEnd_toStartOf="@+id/disco"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/star"
+        app:layout_constraintVertical_bias="0.372" />
 
     <TextView
         android:id="@+id/artista"
@@ -97,18 +115,24 @@
         android:layout_height="wrap_content"
         android:text="@string/artista"
         android:textSize="16sp"
-        tools:layout_editor_absoluteX="67dp"
-        tools:layout_editor_absoluteY="183dp" />
+        app:layout_constraintBottom_toTopOf="@+id/tiempo_actual"
+        app:layout_constraintEnd_toStartOf="@+id/disco"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cancion" />
 
     <ImageButton
         android:id="@+id/siguiente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#00FFFFFF"
-        android:tint="#B71C1C"
+        android:contentDescription="@string/siguiente"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/play"
+        app:layout_constraintTop_toBottomOf="@+id/tiempo_total"
         app:srcCompat="@android:drawable/ic_media_next"
-        tools:layout_editor_absoluteX="618dp"
-        tools:layout_editor_absoluteY="335dp" />
+        app:tint="#B71C1C" />
 
     <ImageButton
         android:id="@+id/atras"
@@ -116,43 +140,77 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/atras"
-        android:tint="#B71C1C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/play"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tiempo_actual"
+        app:layout_constraintVertical_bias="0.623"
         app:srcCompat="@android:drawable/ic_media_previous"
-        tools:layout_editor_absoluteX="56dp"
-        tools:layout_editor_absoluteY="335dp" />
+        app:tint="#B71C1C" />
 
     <ImageButton
         android:id="@+id/play"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:backgroundTint="#00FFFFFF"
-        android:tint="#B71C1C"
+        android:contentDescription="@string/play"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/siguiente"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/atras"
+        app:layout_constraintTop_toBottomOf="@+id/progress"
         app:srcCompat="@android:drawable/ic_media_play"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="341dp" />
+        app:tint="#B71C1C"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <SeekBar
         android:id="@+id/progress"
         android:layout_width="273dp"
         android:layout_height="21dp"
+        android:max="100"
+        android:progress="25"
         android:thumbTint="#B71C1C"
-        tools:layout_editor_absoluteX="229dp"
-        tools:layout_editor_absoluteY="335dp" />
+        app:layout_constraintBottom_toTopOf="@+id/pause"
+        app:layout_constraintEnd_toStartOf="@+id/tiempo_total"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tiempo_actual"
+        app:layout_constraintTop_toBottomOf="@+id/disco" />
 
     <TextView
         android:id="@+id/tiempo_actual"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tiempo_actual"
-        tools:layout_editor_absoluteX="183dp"
-        tools:layout_editor_absoluteY="335dp" />
+        app:layout_constraintBottom_toTopOf="@+id/siguiente"
+        app:layout_constraintEnd_toStartOf="@+id/progress"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/artista" />
 
     <TextView
         android:id="@+id/tiempo_total"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tiempo_total"
-        tools:layout_editor_absoluteX="502dp"
-        tools:layout_editor_absoluteY="337dp" />
+        app:layout_constraintBottom_toTopOf="@+id/pause"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/progress"
+        app:layout_constraintTop_toBottomOf="@+id/volume" />
+
+    <ImageButton
+        android:id="@+id/star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/estrella"
+        app:layout_constraintBottom_toTopOf="@+id/volume"
+        app:layout_constraintEnd_toStartOf="@+id/share"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/disco"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/btn_star"
+        app:tint="#B71C1C" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
