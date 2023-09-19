@@ -117,6 +117,7 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/tiempo_actual"
         app:layout_constraintEnd_toStartOf="@+id/disco"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cancion" />
 
@@ -182,7 +183,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tiempo_actual"
-        app:layout_constraintBottom_toTopOf="@+id/siguiente"
+        app:layout_constraintBottom_toTopOf="@+id/play"
         app:layout_constraintEnd_toStartOf="@+id/progress"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
