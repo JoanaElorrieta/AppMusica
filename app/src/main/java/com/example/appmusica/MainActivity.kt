@@ -11,33 +11,26 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val buttonPlay: ImageButton = findViewById(R.id.play)
-        val buttonPause: ImageButton = findViewById(R.id.pause)
 
-
-        buttonPlay.setOnClickListener {
-            buttonPlay.visibility=View.INVISIBLE
-            buttonPause.visibility=View.VISIBLE
+        findViewById<ImageButton>(R.id.play).setOnClickListener {
+            findViewById<ImageButton>(R.id.play).visibility=View.INVISIBLE
+            findViewById<ImageButton>(R.id.pause).visibility=View.VISIBLE
             isPlaying=true
         }
-        buttonPause.setOnClickListener {
-            buttonPause.visibility=View.INVISIBLE
-            buttonPlay.visibility=View.VISIBLE
+        findViewById<ImageButton>(R.id.pause).setOnClickListener {
+            findViewById<ImageButton>(R.id.pause).visibility=View.INVISIBLE
+            findViewById<ImageButton>(R.id.play).visibility=View.VISIBLE
             isPlaying=false
         }
-
-        }
+    }
     override fun onResume() {
         super.onResume()
-        val buttonPlay: ImageButton = findViewById(R.id.play)
-        val buttonPause: ImageButton = findViewById(R.id.pause)
-
         if(isPlaying){
-            buttonPlay.visibility=View.INVISIBLE
-            buttonPause.visibility=View.VISIBLE
+            findViewById<ImageButton>(R.id.play).visibility=View.INVISIBLE
+            findViewById<ImageButton>(R.id.pause).visibility=View.VISIBLE
         }else{
-            buttonPause.visibility=View.INVISIBLE
-            buttonPlay.visibility=View.VISIBLE
+            findViewById<ImageButton>(R.id.pause).visibility=View.INVISIBLE
+            findViewById<ImageButton>(R.id.play).visibility=View.VISIBLE
         }
     }
 
